@@ -1,45 +1,18 @@
-//initilisating speed detection
+ //initialisating speed detection
 
-function speedDetector( speed ) {
-
-  //constant for the speed limit
-
-  //
-
-  const speedLimit = 70;
-
-  //
-
+function speedDetector(speed) {
+  const speedLimit = 70;   // Adjust the speed limit as needed
   const demeritPointsPerKm = 5;
+//compare output
+  if (speed <= speedLimit) {
+      console.log("OK");
+  } else {
+    //over speed limit calculating points as defined
+      const demeritPoints = Math.floor((speed - speedLimit) / demeritPointsPerKm);
+      console.log("Points:", demeritPoints);
 
-  // compare input
-
-  if (speed <= speedLimit) 
-    {
-
-  
-  //no message will display if under speedLimit
-
-  console.log(" ok ");
-
+      if (demeritPoints > 12) { // Adjust the threshold as needed
+          console.log("License Suspended");
+      }
   }
-
-  else {
-
-  //over speed limit calculating points as defined.
-
-  constDemeritPoints = Math.floor((speed-speedLimit) / demeritPointsPerKm );
-
-  console.log(`Points:${demeritPoints }` );
-
-  //in case licence need to be suspend.
-
-  if (demeritPoints > 12)
-
-  {
-
-  console.log(" License Suspended");
-
-  // alert in cases where needed.
-  
-  }
+}
